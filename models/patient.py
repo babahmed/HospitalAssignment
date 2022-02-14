@@ -1,7 +1,10 @@
-
+from typing import List
+import uuid
+from helpers.appointment_types import AppointmentType
 
 from models.appointment import Appointment
 from models.prescription import Prescription
+from models.receptionist import Receptionist
 
 
 class Patient:
@@ -13,8 +16,11 @@ class Patient:
         self.phone_number = phone_number
     
 
-    def request_appointment(self) -> Appointment:
-        pass
+    def request_appointment(self, appointment_schedule) -> List[Appointment]:
+        receptionist = Receptionist("Receptionist", "12345")
+        date_time_available, staff_id  = receptionist.find_available_time(appointment_schedule)
+        appointment_schedule = receptionist.make_appointment(self.id, staff_id, AppointmentType.APPOINTMENT, date_time_available, appointment_schedule)
+        return appointment_schedule
 
     def request_repeat(self) -> Prescription:
         pass
