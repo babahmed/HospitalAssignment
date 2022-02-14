@@ -16,8 +16,7 @@ class Patient:
         self.phone_number = phone_number
     
 
-    def request_appointment(self, appointment_schedule) -> List[Appointment]:
-        receptionist = Receptionist("Receptionist", "12345")
+    def request_appointment(self, appointment_schedule, receptionist) -> List[Appointment]:
         date_time_available, staff_id  = receptionist.find_available_time(appointment_schedule)
         appointment_schedule = receptionist.make_appointment(self.id, staff_id, AppointmentType.APPOINTMENT, date_time_available, appointment_schedule)
         return appointment_schedule

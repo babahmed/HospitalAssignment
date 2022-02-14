@@ -1,16 +1,18 @@
-from phone_record import classes
+from models.receptionist import Receptionist
 
 health_care_professionals =  {}
 prescriptions =  {}
-appointments =  {}
+appointment_schedule =  {}
 prescriptions =  {}
 patients =  {}
 
 
 def main():
     while True:
-        pass
-
+         if options == 1:
+             patient  = input("Enter patient name: ")
+             receptionist  = Receptionist()
+             patient.request_appointment(appointment_schedule, receptionist)
 
 if __name__ == "__main__":
     main()
