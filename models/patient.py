@@ -2,19 +2,11 @@
 
 class Patient:
 
-    def __init___():
-        pass pass
+    def __init___(name, address, phone_number):
+        self.name = name
+        self.address = address
+        self.phone_number = phone_number
+    
 
-
-()
-
-__annotations__
-
-
-__annotations__
-
-__
-
-tini__
-
-ni
+    def request_appointment(self) -> Appointment:
+        pass
